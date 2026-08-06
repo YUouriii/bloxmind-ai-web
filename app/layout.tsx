@@ -23,25 +23,23 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://bloxmind.ai'),
   title: {
-    default: 'BloxMind — Build Roblox Games at the Speed of Thought',
+    default: 'BloxMind - Build Roblox Maps with AI | AI Roblox Generator',
     template: '%s · BloxMind',
   },
   description:
-    'The context-aware desktop AI agent integrated directly with Roblox Studio and Rojo live sync. Code, debug, and orchestrate project mechanics using natural language.',
+    'BloxMind is the ultimate AI tool to build Roblox maps, scripts, and 3D environments effortlessly with artificial intelligence.',
   generator: 'v0.app',
   applicationName: 'BloxMind',
   keywords: [
     'BloxMind',
-    'Roblox',
-    'Roblox Studio',
-    'AI coding assistant',
-    'Luau',
-    'Rojo',
-    'MCP',
-    'AI game development',
-    'Roblox AI',
+    'bloxmind ai',
+    'build roblox map with ai',
+    'roblox ai studio',
+    'ai roblox generator',
+    'roblox map creator ai',
+    'roblox studio ai',
   ],
-  authors: [{ name: 'BloxMind' }],
+  authors: [{ name: 'BloxMind Team' }],
   creator: 'BloxMind',
   publisher: 'BloxMind',
   icons: {
@@ -49,27 +47,25 @@ export const metadata: Metadata = {
     apple: '/Gemini_Generated_Image_83425d83425d8342-removebg-preview.png',
   },
   openGraph: {
-    title: 'BloxMind — Build Roblox Games at the Speed of Thought',
-    description:
-      'A context-aware desktop AI agent for Roblox Studio with Rojo live sync, tool execution, and checkpoints.',
-    type: 'website',
-    locale: 'en_US',
+    title: 'BloxMind - Build Roblox Maps with AI',
+    description: 'Create and generate Roblox maps using AI in seconds with BloxMind.',
     url: 'https://bloxmind.ai',
     siteName: 'BloxMind',
     images: [
       {
         url: '/icon.svg',
-        width: 512,
-        height: 512,
-        alt: 'BloxMind logo',
+        width: 1200,
+        height: 630,
+        alt: 'BloxMind AI Roblox Map Builder',
       },
     ],
+    locale: 'en_US',
+    type: 'website',
   },
   twitter: {
     card: 'summary',
-    title: 'BloxMind — Build Roblox Games at the Speed of Thought',
-    description:
-      'A context-aware desktop AI agent for Roblox Studio with Rojo live sync, tool execution, and checkpoints.',
+    title: 'BloxMind - Build Roblox Maps with AI',
+    description: 'Create and generate Roblox maps using AI in seconds with BloxMind.',
     images: ['/icon.svg'],
   },
   robots: {
