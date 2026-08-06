@@ -1,0 +1,43 @@
+name: Deploy Release to Netlify
+
+on:
+  release:
+    types: [published] # يعمل تلقائياً عند نشر Release جديد على GitHub
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js & pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 10
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Build Project
+        run: pnpm run build
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v3.0
+        with:
+          publish-dir: '.next'
+          production-deploy: true
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: "Deploy from GitHub Release: ${{ github.event.release.tag_name }}"
+          enable-pull-request-comment: false
+          enable-commit-comment: false
+          overwrite-deploys: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
