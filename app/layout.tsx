@@ -44,6 +44,10 @@ export const metadata: Metadata = {
   authors: [{ name: 'BloxMind' }],
   creator: 'BloxMind',
   publisher: 'BloxMind',
+  icons: {
+    icon: '/icon.svg',
+    apple: '/apple-icon.png',
+  },
   openGraph: {
     title: 'BloxMind — Build Roblox Games at the Speed of Thought',
     description:
