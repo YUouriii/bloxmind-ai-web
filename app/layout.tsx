@@ -45,8 +45,8 @@ export const metadata: Metadata = {
   creator: 'BloxMind',
   publisher: 'BloxMind',
   icons: {
-    icon: '/icon.svg',
-    apple: '/apple-icon.png',
+    icon: '/Gemini_Generated_Image_83425d83425d8342.png',
+    apple: '/Gemini_Generated_Image_83425d83425d8342.png',
   },
   openGraph: {
     title: 'BloxMind — Build Roblox Games at the Speed of Thought',
