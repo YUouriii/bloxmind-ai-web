@@ -1,0 +1,22 @@
+name: Trigger Website Deployment
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  trigger-website-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger website deployment
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.WEBSITE_REPO_TOKEN }}
+          repository: YUouriii/bloxmind-ai-web
+          event-type: deploy-website
+          client-payload: |
+            {
+              "release_version": "${{ github.event.release.tag_name }}",
+              "release_name": "${{ github.event.release.name }}",
+              "app_repo": "${{ github.repository }}"
+            }
