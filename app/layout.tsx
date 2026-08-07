@@ -117,8 +117,17 @@ export default function RootLayout({
               url: 'https://bloxmindai.netlify.app',
               applicationCategory: 'DeveloperApplication',
               operatingSystem: 'Windows, macOS, Linux',
+              softwareVersion: '0.9.0',
               description:
                 'Create Roblox games with AI for free. BloxMind is an AI Roblox game generator that creates maps, scripts, and 3D environments for Roblox Studio.',
+              featureList: [
+                'AI Roblox map generator',
+                'Luau script generator',
+                'Rojo live sync',
+                '25+ AI providers',
+                'Checkpoint Engine',
+                '1-click Roblox Studio setup',
+              ],
               offers: {
                 '@type': 'Offer',
                 price: '0',

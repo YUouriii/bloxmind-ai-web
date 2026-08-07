@@ -1,6 +1,6 @@
 import { Logo } from '@/components/logo'
 
-type FooterLink = { label: string; href: string; badge?: boolean }
+type FooterLink = { label: string; href: string; badge?: boolean; nofollow?: boolean }
 
 const LINK_GROUPS: { title: string; links: FooterLink[] }[] = [
   {
@@ -14,7 +14,7 @@ const LINK_GROUPS: { title: string; links: FooterLink[] }[] = [
     title: 'Community',
     links: [
       { label: 'GitHub Discussions', href: 'https://github.com/YUouriii/app-BloxMind-ai/discussions' },
-      { label: 'Discord', href: 'https://discord.gg/PhcnZBWcP6' },
+      { label: 'Discord', href: 'https://discord.gg/PhcnZBWcP6', nofollow: true },
       { label: 'Releases', href: 'https://github.com/YUouriii/app-BloxMind-ai/releases' },
       { label: 'Roblox DevForum', href: 'https://devforum.roblox.com' },
     ],
@@ -72,7 +72,7 @@ export function SiteFooter() {
               <a
                 href={link.href}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel={link.nofollow ? 'noopener noreferrer nofollow' : 'noopener noreferrer'}
                 className={
                   link.badge
                     ? 'inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-1 font-mono text-xs text-primary transition-colors hover:bg-primary/20'

@@ -31,7 +31,7 @@ export function Hero() {
           variants={{ visible: { transition: { staggerChildren: 0.05 } } }}
           className="text-balance text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl"
         >
-          {['Build', 'Roblox', 'Games', 'at', 'the'].map((word, i) => (
+          {['Create', 'Roblox', 'Games', 'with'].map((word, i) => (
             <motion.span
               key={i}
               variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }}
@@ -44,13 +44,7 @@ export function Hero() {
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }}
             className="animated-gradient bg-gradient-to-r from-primary via-[#7fefff] to-emerald bg-clip-text text-transparent"
           >
-            Speed
-          </motion.span>
-          <motion.span
-            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } } }}
-            className="inline-block"
-          >
-            {' '}of Thought with AI.
+            AI for Free
           </motion.span>
         </motion.h1>
 
@@ -60,9 +54,9 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
           className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg"
         >
-          The context-aware desktop AI agent integrated directly with Roblox
-          Studio and Rojo live sync. Code, debug, and orchestrate project
-          mechanics using natural language.
+          BloxMind is the free AI Roblox game generator that creates maps,
+          Luau scripts, and 3D environments from natural language. No coding
+          required — built for Roblox Studio with Rojo live sync.
         </motion.p>
 
         <motion.div
