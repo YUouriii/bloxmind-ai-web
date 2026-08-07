@@ -20,8 +20,6 @@ const FRICTION = 0.1
 const FRICTION_STATIC = 0.3
 const DENSITY = 0.002
 const MAX_VELOCITY = 35
-const ANGULAR_DECAY = 0.99
-const ANGULAR_STOP_THRESHOLD = 0.06
 
 export function PhysicsGrid() {
   const containerRef = useRef<HTMLDivElement>(null)

@@ -1,5 +1,4 @@
 import { Logo } from '@/components/logo'
-import { REPO_URL } from '@/lib/use-latest-release'
 
 type FooterLink = { label: string; href: string; badge?: boolean }
 
