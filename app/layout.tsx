@@ -86,6 +86,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://bloxmind.ai',
   },
+  verification: {
+    google: 'gX4YmSOyfvbnhIz7zCzguO2zVbadZ7Fn1mvbI7TN0sI',
+  },
 }
 
 export const viewport: Viewport = {
