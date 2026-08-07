@@ -11,6 +11,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/_next/'],
       },
     ],
-    sitemap: 'https://bloxmind.ai/sitemap.xml',
+    sitemap: 'https://bloxmindai.netlify.app/sitemap.xml',
   }
 }

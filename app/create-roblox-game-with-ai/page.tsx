@@ -21,13 +21,13 @@ export const metadata: Metadata = {
     'roblox map creator ai',
   ],
   alternates: {
-    canonical: 'https://bloxmind.ai/create-roblox-game-with-ai',
+    canonical: 'https://bloxmindai.netlify.app/create-roblox-game-with-ai',
   },
   openGraph: {
     title: 'Create Roblox Games with AI for Free - BloxMind',
     description:
       'Create Roblox games with AI for free. Generate maps, scripts, and 3D environments with BloxMind AI game generator.',
-    url: 'https://bloxmind.ai/create-roblox-game-with-ai',
+    url: 'https://bloxmindai.netlify.app/create-roblox-game-with-ai',
     type: 'website',
   },
 }

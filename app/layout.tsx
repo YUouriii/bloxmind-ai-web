@@ -21,7 +21,7 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://bloxmind.ai'),
+  metadataBase: new URL('https://bloxmindai.netlify.app'),
   title: {
     default: 'BloxMind - Create Roblox Games with AI for Free | AI Game Generator',
     template: '%s · BloxMind',
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'BloxMind - Create Roblox Games with AI for Free',
     description: 'Create Roblox games with AI for free. Generate maps, scripts, and 3D environments with BloxMind AI game generator.',
-    url: 'https://bloxmind.ai',
+    url: 'https://bloxmindai.netlify.app',
     siteName: 'BloxMind',
     images: [
       {
@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://bloxmind.ai',
+    canonical: 'https://bloxmindai.netlify.app',
   },
   verification: {
     google: 'gX4YmSOyfvbnhIz7zCzguO2zVbadZ7Fn1mvbI7TN0sI',
@@ -114,7 +114,7 @@ export default function RootLayout({
               '@context': 'https://schema.org',
               '@type': 'WebApplication',
               name: 'BloxMind',
-              url: 'https://bloxmind.ai',
+              url: 'https://bloxmindai.netlify.app',
               applicationCategory: 'DeveloperApplication',
               operatingSystem: 'Windows, macOS, Linux',
               description:

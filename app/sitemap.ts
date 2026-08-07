@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next'
 export const dynamic = 'force-static'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://bloxmind.ai'
+  const baseUrl = 'https://bloxmindai.netlify.app'
   const lastModified = new Date('2026-01-01')
 
   return [
