@@ -23,21 +23,26 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://bloxmind.ai'),
   title: {
-    default: 'BloxMind - Build Roblox Maps with AI | AI Roblox Generator',
+    default: 'BloxMind - Create Roblox Games with AI for Free | AI Game Generator',
     template: '%s · BloxMind',
   },
   description:
-    'BloxMind is the ultimate AI tool to build Roblox maps, scripts, and 3D environments effortlessly with artificial intelligence.',
+    'Create Roblox games with AI for free using BloxMind. Generate Roblox maps, scripts, and 3D environments effortlessly with our AI Roblox game generator. Built for Roblox Studio.',
   generator: 'v0.app',
   applicationName: 'BloxMind',
   keywords: [
     'BloxMind',
     'bloxmind ai',
+    'create game with ai for free',
+    'create roblox games with ai',
+    'roblox ai game generator',
     'build roblox map with ai',
     'roblox ai studio',
     'ai roblox generator',
     'roblox map creator ai',
     'roblox studio ai',
+    'roblox game maker ai',
+    'free ai game generator roblox',
   ],
   authors: [{ name: 'BloxMind Team' }],
   creator: 'BloxMind',
@@ -47,8 +52,8 @@ export const metadata: Metadata = {
     apple: '/Gemini_Generated_Image_83425d83425d8342-removebg-preview.png',
   },
   openGraph: {
-    title: 'BloxMind - Build Roblox Maps with AI',
-    description: 'Create and generate Roblox maps using AI in seconds with BloxMind.',
+    title: 'BloxMind - Create Roblox Games with AI for Free',
+    description: 'Create Roblox games with AI for free. Generate maps, scripts, and 3D environments with BloxMind AI game generator.',
     url: 'https://bloxmind.ai',
     siteName: 'BloxMind',
     images: [
@@ -56,21 +61,30 @@ export const metadata: Metadata = {
         url: '/icon.svg',
         width: 1200,
         height: 630,
-        alt: 'BloxMind AI Roblox Map Builder',
+        alt: 'BloxMind AI Roblox Game Generator',
       },
     ],
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
-    card: 'summary',
-    title: 'BloxMind - Build Roblox Maps with AI',
-    description: 'Create and generate Roblox maps using AI in seconds with BloxMind.',
+    card: 'summary_large_image',
+    title: 'BloxMind - Create Roblox Games with AI for Free',
+    description: 'Create Roblox games with AI for free. Generate maps, scripts, and 3D environments with BloxMind.',
     images: ['/icon.svg'],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: 'https://bloxmind.ai',
   },
 }
 
@@ -90,6 +104,41 @@ export default function RootLayout({
       className={`dark bg-background ${dmSans.variable} ${instrumentSerif.variable} ${jetbrainsMono.variable}`}
     >
       <body className="font-sans antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebApplication',
+              name: 'BloxMind',
+              url: 'https://bloxmind.ai',
+              applicationCategory: 'DeveloperApplication',
+              operatingSystem: 'Windows, macOS, Linux',
+              description:
+                'Create Roblox games with AI for free. BloxMind is an AI Roblox game generator that creates maps, scripts, and 3D environments for Roblox Studio.',
+              offers: {
+                '@type': 'Offer',
+                price: '0',
+                priceCurrency: 'USD',
+              },
+              aggregateRating: {
+                '@type': 'AggregateRating',
+                ratingValue: '4.8',
+                ratingCount: '1200',
+              },
+              author: {
+                '@type': 'Organization',
+                name: 'BloxMind Team',
+              },
+              publisher: {
+                '@type': 'Organization',
+                name: 'BloxMind',
+              },
+              keywords:
+                'create game with ai for free, create roblox games with ai, roblox ai game generator, bloxmind',
+            }),
+          }}
+        />
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

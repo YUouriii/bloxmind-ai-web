@@ -5,6 +5,7 @@ import { FeaturesGrid } from '@/components/features-grid'
 import { ProvidersGrid } from '@/components/providers-grid'
 import { Showcase } from '@/components/showcase'
 import { Downloads } from '@/components/downloads'
+import { FAQ } from '@/components/faq'
 import { SiteFooter } from '@/components/site-footer'
 import { ScrollProgress } from '@/components/scroll-progress'
 import { CursorGlow } from '@/components/cursor-glow'
@@ -23,6 +24,7 @@ export default function Page() {
         <ProvidersGrid />
         <Showcase />
         <Downloads />
+        <FAQ />
       </main>
       <SiteFooter />
       <BackToTop />
