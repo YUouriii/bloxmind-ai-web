@@ -8,6 +8,8 @@ export function CursorGlow() {
   useEffect(() => {
     const el = ref.current
     if (!el) return
+    // Cursor glow is a desktop/mouse nicety — skip it entirely on touch devices
+    if (!window.matchMedia('(pointer: fine)').matches) return
     let raf = 0
     let x = window.innerWidth / 2
     let y = window.innerHeight / 2

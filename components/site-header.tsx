@@ -126,6 +126,10 @@ export function SiteHeader() {
                   {link.label}
                 </a>
               ))}
+              <div className="mt-2 flex items-center justify-between rounded-lg border border-white/10 bg-white/[0.03] py-2 pl-3 pr-2">
+                <span className="text-sm text-muted-foreground">Theme</span>
+                <ThemeToggle />
+              </div>
               <a
                 href="#downloads"
                 onClick={() => setOpen(false)}

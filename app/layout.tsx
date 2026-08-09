@@ -48,8 +48,22 @@ export const metadata: Metadata = {
   creator: 'BloxMind',
   publisher: 'BloxMind',
   icons: {
-    icon: '/Gemini_Generated_Image_83425d83425d8342-removebg-preview.png',
-    apple: '/Gemini_Generated_Image_83425d83425d8342-removebg-preview.png',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any', type: 'image/x-icon' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-48x48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/icon-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon-512x512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [{ url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }],
+    shortcut: '/favicon.ico',
+    other: [{ rel: 'mask-icon', url: '/icon.svg', color: '#1c1917' }],
+  },
+  appleWebApp: {
+    capable: true,
+    title: 'BloxMind',
+    statusBarStyle: 'black-translucent',
   },
   openGraph: {
     title: 'BloxMind - Create Roblox Games with AI for Free',
@@ -58,7 +72,7 @@ export const metadata: Metadata = {
     siteName: 'BloxMind',
     images: [
       {
-        url: '/icon.svg',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'BloxMind AI Roblox Game Generator',
@@ -71,7 +85,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'BloxMind - Create Roblox Games with AI for Free',
     description: 'Create Roblox games with AI for free. Generate maps, scripts, and 3D environments with BloxMind.',
-    images: ['/icon.svg'],
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,
@@ -92,6 +106,10 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  viewportFit: 'cover',
   colorScheme: 'dark',
   themeColor: '#1c1917',
 }
@@ -112,42 +130,55 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@type': 'WebApplication',
-              name: 'BloxMind',
-              url: 'https://bloxmindai.netlify.app',
-              applicationCategory: 'DeveloperApplication',
-              operatingSystem: 'Windows, macOS, Linux',
-              softwareVersion: '0.9.0',
-              description:
-                'Create Roblox games with AI for free. BloxMind is an AI Roblox game generator that creates maps, scripts, and 3D environments for Roblox Studio.',
-              featureList: [
-                'AI Roblox map generator',
-                'Luau script generator',
-                'Rojo live sync',
-                '25+ AI providers',
-                'Checkpoint Engine',
-                '1-click Roblox Studio setup',
+              '@graph': [
+                {
+                  '@type': 'Organization',
+                  '@id': 'https://bloxmindai.netlify.app/#organization',
+                  name: 'BloxMind',
+                  url: 'https://bloxmindai.netlify.app',
+                  logo: 'https://bloxmindai.netlify.app/icon-512x512.png',
+                  description:
+                    'BloxMind is an AI Roblox game generator that creates maps, scripts, and 3D environments for Roblox Studio.',
+                  sameAs: ['https://github.com/YUouriii/app-BloxMind-ai'],
+                },
+                {
+                  '@type': 'WebSite',
+                  '@id': 'https://bloxmindai.netlify.app/#website',
+                  url: 'https://bloxmindai.netlify.app',
+                  name: 'BloxMind',
+                  publisher: {
+                    '@id': 'https://bloxmindai.netlify.app/#organization',
+                  },
+                },
+                {
+                  '@type': 'WebApplication',
+                  name: 'BloxMind',
+                  url: 'https://bloxmindai.netlify.app',
+                  applicationCategory: 'DeveloperApplication',
+                  operatingSystem: 'Windows, macOS, Linux',
+                  softwareVersion: '0.9.0',
+                  description:
+                    'Create Roblox games with AI for free. BloxMind is an AI Roblox game generator that creates maps, scripts, and 3D environments for Roblox Studio.',
+                  featureList: [
+                    'AI Roblox map generator',
+                    'Luau script generator',
+                    'Rojo live sync',
+                    '25+ AI providers',
+                    'Checkpoint Engine',
+                    '1-click Roblox Studio setup',
+                  ],
+                  offers: {
+                    '@type': 'Offer',
+                    price: '0',
+                    priceCurrency: 'USD',
+                  },
+                  publisher: {
+                    '@id': 'https://bloxmindai.netlify.app/#organization',
+                  },
+                  keywords:
+                    'create game with ai for free, create roblox games with ai, roblox ai game generator, bloxmind',
+                },
               ],
-              offers: {
-                '@type': 'Offer',
-                price: '0',
-                priceCurrency: 'USD',
-              },
-              aggregateRating: {
-                '@type': 'AggregateRating',
-                ratingValue: '4.8',
-                ratingCount: '1200',
-              },
-              author: {
-                '@type': 'Organization',
-                name: 'BloxMind Team',
-              },
-              publisher: {
-                '@type': 'Organization',
-                name: 'BloxMind',
-              },
-              keywords:
-                'create game with ai for free, create roblox games with ai, roblox ai game generator, bloxmind',
             }),
           }}
         />

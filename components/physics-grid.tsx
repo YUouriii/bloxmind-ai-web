@@ -28,10 +28,17 @@ export function PhysicsGrid() {
   const runnerRef = useRef<Matter.Runner | null>(null)
   const [mounted, setMounted] = useState(false)
   const [inView, setInView] = useState(false)
+  const [preferStatic, setPreferStatic] = useState(false)
   const lastDraggedEl = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     setMounted(true)
+    // Phones and reduced-motion users get a lightweight static grid —
+    // Matter.js with 25 rigid bodies is overkill on small screens/budget GPUs.
+    setPreferStatic(
+      window.matchMedia('(max-width: 640px)').matches ||
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+    )
   }, [])
 
   // Detect when the container enters the viewport
@@ -52,7 +59,7 @@ export function PhysicsGrid() {
   }, [mounted])
 
   useEffect(() => {
-    if (!mounted || !inView || !containerRef.current) return
+    if (!mounted || !inView || !containerRef.current || preferStatic) return
     const container = containerRef.current
     const engine = Matter.Engine.create({ enableSleeping: false, gravity: { x: 0, y: 1 } })
     // Increase solver precision to prevent interpenetration/overlap
@@ -286,7 +293,41 @@ export function PhysicsGrid() {
       Matter.World.clear(world, false)
       Matter.Engine.clear(engine)
     }
-  }, [mounted, inView])
+  }, [mounted, inView, preferStatic])
+
+  // Lightweight static fallback: small screens + reduced-motion users skip
+  // the Matter.js engine entirely and get a tidy, scrollable brand grid.
+  if (!mounted || preferStatic) {
+    return (
+      <div className="relative flex h-[520px] w-full flex-col overflow-hidden rounded-2xl border border-border bg-background/80">
+        <div className="scrollbar-thin flex-1 overflow-y-auto p-3 sm:p-4">
+          <div className="grid grid-cols-4 gap-2.5 sm:grid-cols-6 lg:grid-cols-8">
+            {PROVIDERS.map((provider) => (
+              <div
+                key={provider.name}
+                className="flex aspect-square items-center justify-center rounded-xl border border-border bg-background/50"
+              >
+                <div className="pointer-events-none flex flex-col items-center justify-center gap-1 p-1 text-center">
+                  <ProviderIcon
+                    name={provider.name}
+                    slug={provider.slug}
+                    favicon={provider.favicon}
+                    className="size-5"
+                  />
+                  <span className="max-w-[64px] truncate text-[9px] font-medium leading-tight text-foreground/90">
+                    {provider.name}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="pointer-events-none absolute top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-border bg-background/70 px-3 py-1.5 font-mono text-[11px] text-foreground/70 backdrop-blur">
+          Every major AI provider, ready to plug in
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div

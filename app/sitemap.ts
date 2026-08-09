@@ -4,7 +4,7 @@ export const dynamic = 'force-static'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://bloxmindai.netlify.app'
-  const lastModified = new Date('2026-01-01')
+  const lastModified = new Date('2026-08-09')
 
   return [
     {

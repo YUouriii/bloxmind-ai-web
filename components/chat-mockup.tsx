@@ -15,17 +15,40 @@ export function ChatMockup() {
   const [displayed, setDisplayed] = useState<string[]>([])
   const [currentLine, setCurrentLine] = useState('')
   const [showCursor, setShowCursor] = useState(true)
+  const [started, setStarted] = useState(false)
+  const rootRef = useRef<HTMLDivElement>(null)
   const lineIdx = useRef(0)
   const charIdx = useRef(0)
 
+  // Only run the typing animation once the mockup is actually on screen.
+  // On tablets/phones the hero panel sits below the fold, so this avoids
+  // burning CPU/battery re-rendering every 30ms while it scrolled off.
+  useEffect(() => {
+    const el = rootRef.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStarted(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.15 },
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
   // Cursor blink
   useEffect(() => {
+    if (!started) return
     const id = setInterval(() => setShowCursor((c) => !c), 500)
     return () => clearInterval(id)
-  }, [])
+  }, [started])
 
   // Typing animation — single interval, no circular deps
   useEffect(() => {
+    if (!started) return
     const id = setInterval(() => {
       const line = LINES[lineIdx.current]
       if (!line) {
@@ -43,10 +66,13 @@ export function ChatMockup() {
       }
     }, 30)
     return () => clearInterval(id)
-  }, [])
+  }, [started])
 
   return (
-    <div className="scrollbar-thin flex h-[360px] flex-col gap-4 overflow-y-auto px-4 py-4 text-sm sm:px-5">
+    <div
+      ref={rootRef}
+      className="scrollbar-thin flex h-[360px] flex-col gap-4 overflow-y-auto px-4 py-4 text-sm sm:px-5"
+    >
       {/* user message */}
       <div className="flex justify-end">
         <div className="max-w-[80%] rounded-xl rounded-tr-sm border border-white/10 bg-white/[0.04] px-3.5 py-2.5 text-foreground/90">

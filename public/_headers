@@ -1,0 +1,21 @@
+# Cache immutable, hashed build assets forever
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Brand icons (generated from public/bloxbot-svg.png)
+/favicon.ico
+/favicon-16x16.png
+/favicon-32x32.png
+/favicon-48x48.png
+/icon-192x192.png
+/icon-512x512.png
+/icon-768x768.png
+/apple-icon.png
+/og-image.png
+  Cache-Control: public, max-age=604800
+
+# SEO files get short, revalidating caches so search engines see updates quickly
+/robots.txt
+  Cache-Control: public, max-age=86400
+/sitemap.xml
+  Cache-Control: public, max-age=3600
