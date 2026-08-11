@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'Roadmap',
   description:
     'The BloxMind roadmap — current progress, in-progress work, and planned features for the AI-powered Roblox Studio agent.',
+  alternates: {
+    canonical: 'https://bloxmindai.netlify.app/roadmap',
+  },
 }
 
 type Phase = {
@@ -75,6 +78,44 @@ export default function RoadmapPage() {
       title="Product Roadmap"
       subtitle="Where BloxMind is today, what we're building right now, and what comes next."
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              '@context': 'https://schema.org',
+              '@type': 'WebPage',
+              '@id': 'https://bloxmindai.netlify.app/roadmap/#webpage',
+              url: 'https://bloxmindai.netlify.app/roadmap',
+              name: 'Roadmap - BloxMind',
+              description:
+                'The BloxMind roadmap — current progress, in-progress work, and planned features for the AI-powered Roblox Studio agent.',
+              isPartOf: {
+                '@id': 'https://bloxmindai.netlify.app/#website',
+              },
+            },
+            {
+              '@context': 'https://schema.org',
+              '@type': 'BreadcrumbList',
+              '@id': 'https://bloxmindai.netlify.app/roadmap/#breadcrumb',
+              itemListElement: [
+                {
+                  '@type': 'ListItem',
+                  position: 1,
+                  name: 'Home',
+                  item: 'https://bloxmindai.netlify.app',
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 2,
+                  name: 'Roadmap',
+                  item: 'https://bloxmindai.netlify.app/roadmap',
+                },
+              ],
+            },
+          ]),
+        }}
+      />
       <div className="relative mx-auto max-w-4xl">
         {/* Timeline line */}
         <div className="absolute left-4 top-0 bottom-0 w-px bg-white/10 sm:left-1/2" />

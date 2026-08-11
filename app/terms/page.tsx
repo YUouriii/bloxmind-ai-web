@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: 'Terms of Service',
   description:
     'The Terms of Service governing your use of BloxMind — the context-aware desktop AI agent for Roblox Studio.',
+  alternates: {
+    canonical: 'https://bloxmindai.netlify.app/terms',
+  },
 }
 
 const POLICIES = [
@@ -73,6 +76,44 @@ const POLICIES = [
 export default function TermsPage() {
   return (
     <LegalPage title="Terms of Service" updated="August 5, 2026">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              '@context': 'https://schema.org',
+              '@type': 'WebPage',
+              '@id': 'https://bloxmindai.netlify.app/terms/#webpage',
+              url: 'https://bloxmindai.netlify.app/terms',
+              name: 'Terms of Service - BloxMind',
+              description:
+                'The Terms of Service governing your use of BloxMind — the context-aware desktop AI agent for Roblox Studio.',
+              isPartOf: {
+                '@id': 'https://bloxmindai.netlify.app/#website',
+              },
+            },
+            {
+              '@context': 'https://schema.org',
+              '@type': 'BreadcrumbList',
+              '@id': 'https://bloxmindai.netlify.app/terms/#breadcrumb',
+              itemListElement: [
+                {
+                  '@type': 'ListItem',
+                  position: 1,
+                  name: 'Home',
+                  item: 'https://bloxmindai.netlify.app',
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 2,
+                  name: 'Terms of Service',
+                  item: 'https://bloxmindai.netlify.app/terms',
+                },
+              ],
+            },
+          ]),
+        }}
+      />
       <p className="text-sm leading-relaxed">
         Welcome to BloxMind. These Terms of Service govern your use of the
         BloxMind application. Please read them carefully.

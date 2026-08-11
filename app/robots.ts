@@ -8,7 +8,12 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/_next/', '/404.html', '/_not-found'],
+        disallow: ['/api/', '/404.html', '/_not-found'],
+      },
+      {
+        userAgent: ['Googlebot', 'Google-InspectionTool'],
+        allow: '/',
+        disallow: ['/api/'],
       },
     ],
     sitemap: 'https://bloxmindai.netlify.app/sitemap.xml',

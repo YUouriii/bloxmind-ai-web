@@ -11,7 +11,7 @@ const PhysicsGrid = dynamic(
 
 export function ProvidersGrid() {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
+    <section id="integrations" className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}

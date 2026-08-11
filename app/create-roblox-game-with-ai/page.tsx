@@ -35,6 +35,44 @@ export const metadata: Metadata = {
 export default function CreateRobloxGameWithAIPage() {
   return (
     <div className="relative min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              '@context': 'https://schema.org',
+              '@type': 'WebPage',
+              '@id': 'https://bloxmindai.netlify.app/create-roblox-game-with-ai/#webpage',
+              url: 'https://bloxmindai.netlify.app/create-roblox-game-with-ai',
+              name: 'Create Roblox Games with AI for Free - BloxMind AI Game Generator',
+              description:
+                'Create Roblox games with AI for free using BloxMind. Generate Roblox maps, Luau scripts, and 3D environments with our AI Roblox game generator. No coding required.',
+              isPartOf: {
+                '@id': 'https://bloxmindai.netlify.app/#website',
+              },
+            },
+            {
+              '@context': 'https://schema.org',
+              '@type': 'BreadcrumbList',
+              '@id': 'https://bloxmindai.netlify.app/create-roblox-game-with-ai/#breadcrumb',
+              itemListElement: [
+                {
+                  '@type': 'ListItem',
+                  position: 1,
+                  name: 'Home',
+                  item: 'https://bloxmindai.netlify.app',
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 2,
+                  name: 'Create Roblox Games with AI',
+                  item: 'https://bloxmindai.netlify.app/create-roblox-game-with-ai',
+                },
+              ],
+            },
+          ]),
+        }}
+      />
       <MeshBackground />
       <ScrollProgress />
       <CursorGlow />

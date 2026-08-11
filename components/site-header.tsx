@@ -14,10 +14,10 @@ function formatStars(n: number) {
 }
 
 const NAV_LINKS = [
-  { label: 'Features', href: '#features' },
-  { label: 'Integrations', href: '#integrations' },
-  { label: 'Changelog', href: '#downloads' },
-  { label: 'Docs', href: '#docs' },
+  { label: 'Features', href: '/#features' },
+  { label: 'Integrations', href: '/#integrations' },
+  { label: 'Changelog', href: '/#downloads' },
+  { label: 'Docs', href: '/docs' },
 ]
 
 export function SiteHeader() {
@@ -87,9 +87,7 @@ export function SiteHeader() {
             )}
           </a>
             <a
-              href="#downloads"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/#downloads"
               className="flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-all duration-200 hover:scale-105 hover:opacity-90 active:scale-95"
             >
             <Download className="size-4" />
@@ -131,7 +129,7 @@ export function SiteHeader() {
                 <ThemeToggle />
               </div>
               <a
-                href="#downloads"
+                href="/#downloads"
                 onClick={() => setOpen(false)}
                 className="mt-2 flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground"
               >

@@ -14,6 +14,26 @@ import { BackToTop } from '@/components/back-to-top'
 export default function Page() {
   return (
     <div className="relative min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'WebPage',
+            '@id': 'https://bloxmindai.netlify.app/#webpage',
+            url: 'https://bloxmindai.netlify.app',
+            name: 'BloxMind - Create Roblox Games with AI for Free | AI Game Generator',
+            description:
+              'Create Roblox games with AI for free using BloxMind. Generate Roblox maps, scripts, and 3D environments effortlessly with our AI Roblox game generator. Built for Roblox Studio.',
+            isPartOf: {
+              '@id': 'https://bloxmindai.netlify.app/#website',
+            },
+            about: {
+              '@id': 'https://bloxmindai.netlify.app/#organization',
+            },
+          }),
+        }}
+      />
       <MeshBackground />
       <ScrollProgress />
       <CursorGlow />

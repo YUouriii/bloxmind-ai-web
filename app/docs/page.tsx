@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: 'Documentation',
   description:
     'BloxMind documentation — getting started, setup, MCP servers, tool execution, and troubleshooting guides.',
+  alternates: {
+    canonical: 'https://bloxmindai.netlify.app/docs',
+  },
 }
 
 const TOC = [
@@ -95,6 +98,44 @@ export default function DocsPage() {
       title="BloxMind Documentation"
       subtitle="Everything you need to set up, configure, and get the most out of BloxMind."
     >
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              '@context': 'https://schema.org',
+              '@type': 'WebPage',
+              '@id': 'https://bloxmindai.netlify.app/docs/#webpage',
+              url: 'https://bloxmindai.netlify.app/docs',
+              name: 'Documentation - BloxMind',
+              description:
+                'BloxMind documentation — getting started, setup, MCP servers, tool execution, and troubleshooting guides.',
+              isPartOf: {
+                '@id': 'https://bloxmindai.netlify.app/#website',
+              },
+            },
+            {
+              '@context': 'https://schema.org',
+              '@type': 'BreadcrumbList',
+              '@id': 'https://bloxmindai.netlify.app/docs/#breadcrumb',
+              itemListElement: [
+                {
+                  '@type': 'ListItem',
+                  position: 1,
+                  name: 'Home',
+                  item: 'https://bloxmindai.netlify.app',
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 2,
+                  name: 'Documentation',
+                  item: 'https://bloxmindai.netlify.app/docs',
+                },
+              ],
+            },
+          ]),
+        }}
+      />
       {/* Table of contents */}
       <nav className="mb-12 rounded-2xl border border-white/10 bg-white/[0.02] p-6">
         <p className="mb-4 flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-primary">
@@ -105,8 +146,6 @@ export default function DocsPage() {
             <li key={item.href}>
               <a
                 href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="block rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-foreground"
               >
                 {item.label}

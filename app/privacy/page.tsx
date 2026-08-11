@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: 'Privacy Policy',
   description:
     'The Privacy Policy explaining how BloxMind collects, uses, and protects your information.',
+  alternates: {
+    canonical: 'https://bloxmindai.netlify.app/privacy',
+  },
 }
 
 const POLICIES = [
@@ -75,6 +78,44 @@ const POLICIES = [
 export default function PrivacyPage() {
   return (
     <LegalPage title="Privacy Policy" updated="August 5, 2026">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              '@context': 'https://schema.org',
+              '@type': 'WebPage',
+              '@id': 'https://bloxmindai.netlify.app/privacy/#webpage',
+              url: 'https://bloxmindai.netlify.app/privacy',
+              name: 'Privacy Policy - BloxMind',
+              description:
+                'The Privacy Policy explaining how BloxMind collects, uses, and protects your information.',
+              isPartOf: {
+                '@id': 'https://bloxmindai.netlify.app/#website',
+              },
+            },
+            {
+              '@context': 'https://schema.org',
+              '@type': 'BreadcrumbList',
+              '@id': 'https://bloxmindai.netlify.app/privacy/#breadcrumb',
+              itemListElement: [
+                {
+                  '@type': 'ListItem',
+                  position: 1,
+                  name: 'Home',
+                  item: 'https://bloxmindai.netlify.app',
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 2,
+                  name: 'Privacy Policy',
+                  item: 'https://bloxmindai.netlify.app/privacy',
+                },
+              ],
+            },
+          ]),
+        }}
+      />
       <p className="text-sm leading-relaxed">
         This Privacy Policy explains how BloxMind collects, uses, and protects
         your information when you use our software.

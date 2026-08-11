@@ -71,8 +71,8 @@ export function SiteFooter() {
                   <li key={link.label}>
               <a
                 href={link.href}
-                target="_blank"
-                rel={link.nofollow ? 'noopener noreferrer nofollow' : 'noopener noreferrer'}
+                target={link.href.startsWith('/') ? undefined : '_blank'}
+                rel={link.href.startsWith('/') ? undefined : (link.nofollow ? 'noopener noreferrer nofollow' : 'noopener noreferrer')}
                 className={
                   link.badge
                     ? 'inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-1 font-mono text-xs text-primary transition-colors hover:bg-primary/20'
