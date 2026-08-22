@@ -163,7 +163,7 @@ export default function RoadmapPage() {
         <p className="text-sm text-muted-foreground">
           Have an idea for the roadmap? Let us know via the{' '}
           <a
-            href="https://github.com/YUouriii/app-BloxMind-ai/discussions"
+            href="https://github.com/BloxMind-studio/bloxmind-desktop/discussions"
             target="_blank"
             rel="noopener noreferrer"
             className="font-medium text-primary underline-offset-4 hover:underline"

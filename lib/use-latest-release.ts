@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 
-export const REPO = 'YUouriii/app-BloxMind-ai'
+export const REPO = 'BloxMind-studio/bloxmind-desktop'
 export const REPO_URL = `https://github.com/${REPO}`
 
 export type ReleaseAsset = {

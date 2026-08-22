@@ -139,7 +139,7 @@ export default function RootLayout({
                   logo: 'https://bloxmindai.netlify.app/icon-512x512.png',
                   description:
                     'BloxMind is an AI Roblox game generator that creates maps, scripts, and 3D environments for Roblox Studio.',
-                  sameAs: ['https://github.com/YUouriii/app-BloxMind-ai'],
+                  sameAs: ['https://github.com/BloxMind-studio/bloxmind-desktop'],
                 },
                 {
                   '@type': 'WebSite',

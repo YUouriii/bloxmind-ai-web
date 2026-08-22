@@ -13,16 +13,16 @@ const LINK_GROUPS: { title: string; links: FooterLink[] }[] = [
   {
     title: 'Community',
     links: [
-      { label: 'GitHub Discussions', href: 'https://github.com/YUouriii/app-BloxMind-ai/discussions' },
+      { label: 'GitHub Discussions', href: 'https://github.com/BloxMind-studio/bloxmind-desktop/discussions' },
       { label: 'Discord', href: 'https://discord.gg/PhcnZBWcP6', nofollow: true },
-      { label: 'Releases', href: 'https://github.com/YUouriii/app-BloxMind-ai/releases' },
+      { label: 'Releases', href: 'https://github.com/BloxMind-studio/bloxmind-desktop/releases' },
       { label: 'Roblox DevForum', href: 'https://devforum.roblox.com' },
     ],
   },
   {
     title: 'Support',
     links: [
-      { label: 'GitHub Issues', href: 'https://github.com/YUouriii/app-BloxMind-ai/issues', badge: true },
+      { label: 'GitHub Issues', href: 'https://github.com/BloxMind-studio/bloxmind-desktop/issues', badge: true },
       { label: 'Contact', href: 'mailto:support@bloxmind.ai', badge: true },
     ],
   },

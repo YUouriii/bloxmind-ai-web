@@ -107,7 +107,7 @@ export default function CreateRobloxGameWithAIPage() {
                 Start Creating for Free
               </a>
               <a
-                href="https://github.com/YUouriii/app-BloxMind-ai"
+                href="https://github.com/BloxMind-studio/bloxmind-desktop"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex w-full items-center justify-center gap-2.5 rounded-xl border border-white/10 bg-white/[0.03] px-6 py-3.5 font-medium text-foreground/90 backdrop-blur-md transition-colors hover:bg-white/[0.07] sm:w-auto"
